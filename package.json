@@ -4,9 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "db-init": "npx ts-node ./src/dbinit.ts",
     "start": "NODE_ENV=development nodemon",
     "test": "NODE_ENV=test mocha -r ts-node/register ./test/**/*.spec.ts",
-    "db-init": "npx ts-node ./src/dbinit.ts",
     "build-start": "rm -rf dist && tslint --project . && tsc && cp ./src/.env* ./dist/ && node dist/server",
     "build-server": "rm -rf dist && tslint --project . && tsc",
     "watch-server": "cross-env NODE_ENV=development nodemon --watch 'src/**/*' -e ts,tsx --exec node --inspect-brk=19887 src/server.ts"
